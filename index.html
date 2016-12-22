@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/style/style.css">
+	</head>
+	<body>
+		<div id="app">
+			<button @click="counter++">Increase</button>
+			<button @click="counter--">Decrease</button>
+			<button @click="secCounter++">Increase 2nd</button>
+			<p> {{counter}} | {{secCounter}}</p>
+			<p> {{output}} | {{result()}}</p>
+		</div>
+	</body>
+	<!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
+	
+	<script src="/bundle.js"></script>
+</html>
