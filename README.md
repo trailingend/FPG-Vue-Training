@@ -21,5 +21,5 @@ Listen at
 Go Production
 ```
 	npm run build
-	npm start
+	then, go to dist folder and start a web server
 ```
