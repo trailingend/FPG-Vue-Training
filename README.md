@@ -1,5 +1,5 @@
 # JL-Vue-Traning
-Base: https://github.com/JoshuaYang/website-template
+Currently just a template
 
 ###Getting Started###
 
