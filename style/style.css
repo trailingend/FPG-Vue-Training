@@ -2,7 +2,7 @@
 *::before,
 *::after {
 	margin: 0;
-	border: 0;
+	padding: 0;
 	outline: none;
 	box-sizing: border-box;
 }
@@ -12,4 +12,24 @@ html {
 }
 body {
 	overflow-x: hidden;
+}
+
+.demo{
+	width: 100px;
+	height: 100px;
+	background-color: gray;
+	display: inline-block;
+	margin: 10px;
+}
+
+.red {
+	background-color: red;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.green {
+	background-color: green;
 }
