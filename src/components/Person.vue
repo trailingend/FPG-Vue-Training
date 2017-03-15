@@ -1,15 +1,27 @@
 <template>
     <div class="dtl-ctnr">
-        <h2>Select Person from below</h2>
-        <p>Click one of the choices to go next</p>
-        <ul>
+        <h2 class="page-title person-title">Who are you shopping for?</h2>
+        <ul class="person-ul">
             <li v-for="(person, index) in persons"
                 :key="person.id"
-                :class="['person', {'active': index === selectedIndex}]"
+                :class="['person-li', {'active': index === selectedIndex}]"
                 @mouseenter=""
                 @click="selectPerson(index)"
-            >{{person.name}}</li>
+            >
+                <div class="person-thumb">
+                    <img :src="person.avatar" />
+                </div>
+                <div class="person-title">{{person.name}}</div>
+            </li>
         </ul>
+        <button class="next-button person-next-button"
+                v-if="selectedIndex!=-1">
+            <router-link :to="{ path: 'trait' }">Next</router-link>
+        </button>
+        <button class="next-button disabled person-next-button"
+                v-if="selectedIndex===-1">
+            <span>Next</span>
+        </button>
     </div>
 </template>
 
@@ -34,12 +46,12 @@
                 this.selectedIndex = index;
                 console.log(this.selectedIndex);
                 this.handleSelectPerson(this.selectedIndex);
-                this.$router.push({
-                    name: 'trait',
-                    query: {
-                        person: this.selectedIndex,
-                    },
-                });
+                // this.$router.push({
+                //     name: 'trait',
+                //     // query: {
+                //     //     person: this.selectedIndex,
+                //     // },
+                // });
             },
         }
     }

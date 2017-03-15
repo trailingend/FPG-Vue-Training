@@ -36,9 +36,9 @@
                 this.handleSelectTrait(this.selectedIndex);
                 this.$router.push({
                     name: 'entry',
-                    query: {
-                        trait: this.selectedIndex,
-                    },
+                    // query: {
+                    //     trait: this.selectedIndex,
+                    // },
                 });
             },
         }
