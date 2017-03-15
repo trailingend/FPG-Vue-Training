@@ -1,7 +1,6 @@
 <template>
     <div class="dtl-ctnr">
-        <h2>Select Trait from below</h2>
-        <p>Click one of the choices to go next</p>
+        <h2 class="page-title trait-title">What is your XXX like?</h2>
         <ul>
             <li v-for="(trait, index) in traits"
                 :key="trait.id"
@@ -18,7 +17,8 @@
     export default {
         data() {
             return {
-                selectedIndex: -1
+                selectedCount: -1,
+                selectedIndex: []
             }
         },
         computed: {
@@ -31,15 +31,15 @@
                 'handleSelectTrait'
             ]),
             selectTrait(index) {
-                this.selectedIndex = index;
-                console.log(this.selectedIndex);
+                this.selectedCount++;
+                this.selectedIndex.push(index);
                 this.handleSelectTrait(this.selectedIndex);
-                this.$router.push({
-                    name: 'entry',
-                    // query: {
-                    //     trait: this.selectedIndex,
-                    // },
-                });
+                // this.$router.push({
+                //     name: 'entry',
+                //     // query: {
+                //     //     trait: this.selectedIndex,
+                //     // },
+                // });
             },
         }
     }
