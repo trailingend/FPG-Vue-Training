@@ -1,14 +1,14 @@
 <template>
     <div class="dtl-ctnr">
-        <h2>Select Person from below</h2>
+        <h2>Select Trait from below</h2>
         <p>Click one of the choices to go next</p>
         <ul>
-            <li v-for="(person, index) in persons"
-                :key="person.id"
-                :class="['person', {'active': index === selectedIndex}]"
+            <li v-for="(trait, index) in traits"
+                :key="trait.id"
+                :class="['trait', {'active': index === selectedIndex}]"
                 @mouseenter=""
-                @click="selectPerson(index)"
-            >{{person.name}}</li>
+                @click="selectTrait(index)"
+            >{{trait.name}}</li>
         </ul>
     </div>
 </template>
@@ -18,26 +18,26 @@
     export default {
         data() {
             return {
-                selectedIndex: -1,
+                selectedIndex: -1
             }
         },
         computed: {
             ...mapGetters([
-                'persons',
+                'traits'
             ]),
         },
         methods: {
             ...mapActions([
-                'handleSelectPerson'
+                'handleSelectTrait'
             ]),
-            selectPerson(index) {
+            selectTrait(index) {
                 this.selectedIndex = index;
                 console.log(this.selectedIndex);
-                this.handleSelectPerson(this.selectedIndex);
+                this.handleSelectTrait(this.selectedIndex);
                 this.$router.push({
-                    name: 'trait',
+                    name: 'entry',
                     query: {
-                        person: this.selectedIndex,
+                        trait: this.selectedIndex,
                     },
                 });
             },

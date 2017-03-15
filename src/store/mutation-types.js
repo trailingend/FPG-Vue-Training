@@ -1,1 +1,2 @@
 export const SELECT_PERSON = 'SELECT_PERSON';
+export const SELECT_TRAIT = 'SELECT_TRAIT';

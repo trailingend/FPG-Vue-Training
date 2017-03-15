@@ -33,3 +33,31 @@ body {
 .green {
 	background-color: green;
 }
+
+.nav-ctnr {
+	position: fixed;
+	display: block;
+	width: 100%;
+	background: white;
+	box-shadow: 0 0 15px #ddd;
+}
+.nav-logo-ctnr {
+	position: relative;
+	float: left;
+	width: 175px;
+	height: 40px;
+	padding: 10px;
+}
+.nav-social-ctnr {
+	position: relative;
+	float: right;
+	padding: 10px;
+	list-style: none;
+}
+
+.inner-ctnr {
+	width: 100%;
+	min-height: 100vh;
+	padding-top: calc(40px + 20px);
+	background: #fbf0f1;
+}
